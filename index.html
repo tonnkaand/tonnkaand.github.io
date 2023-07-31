@@ -1,0 +1,223 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Titre du document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Roboto, Helvetica,sans-serif;
+      }
+      /* Fixez le bouton sur le côté gauche de la page the button on the left side of the page */
+      .open-btn {
+        display: flex;
+        justify-content: flex-start;
+      }
+      /* Stylez et fixez le bouton sur la page */
+      .open-button {
+        background-color: #0e9bf3;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        opacity: 0.8;
+        position: fixed;
+      }
+      /* Positionnez la forme Popup */
+      .login-popup {
+        position: relative;
+        text-align: center;
+        width: 100%;
+      }
+      /* Masquez la forme Popup */
+      .form-popup {
+        display: none;
+        position: fixed;
+        left: 45%;
+        top: 5%;
+        transform: translate(-45%, 5%);
+        border: 2px solid #666;
+        z-index: 9;
+      }
+      /* Styles pour le conteneur de la forme */
+      .form-container {
+        max-width: 300px;
+        padding: 20px;
+        background-color: #b6b2b2;
+      }
+      /* Largeur complète pour les champs de saisie */
+      .form-container input[type="number"],
+      .form-container input[type="password"] ,
+      .form-container input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #eee;
+      }
+      /* Quand les entrées sont concentrées, faites quelque chose */
+      .form-container input[type="number"]:focus,
+      .form-container input[type="password"]:focus ,
+      .form-container input[type="text"]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      /* Stylez le bouton de connexion */
+      .form-container .btn {
+        background-color: #93ee0a;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 10px;
+        opacity: 0.8;
+      }
+      /* Stylez le bouton pour annuler */
+      .form-container .cancel {
+        background-color: #f50606;
+      }
+       /* Stylez le bouton pour incription */
+       .form-container .a {
+        background-color: #612357;
+        color: #fdfafa;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 10px;
+        opacity: 0.8;
+      }
+
+      /* Planez les effets pour les boutons */
+      .form-container .btn:hover,
+      .open-button:hover {
+        opacity: 1;
+      }
+      
+
+
+
+      .login-popup .form-popup{
+    width: 300px;
+    margin-top: 50px;
+    border: 5px solid transparent;
+    box-shadow: 20px 15px 35px rgb(255, 8, 0);
+    background-color: white;
+    margin-left: 30px;
+    border-radius:20px;
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <nav>
+       <div class="open-btn">
+         <button class="open-button" onclick="openForm()"><strong>connection</strong></button>
+      </div>
+  </nav>
+    <div class="login-popup">
+      <div class="form-popup" id="popupForm">
+        <form action="/action_page.php" class="form-container">
+          <h2><em>Veuillez-vous inscrire</em></h2>
+          <label for="tel">
+            <strong>Telephone</strong>
+          </label>
+          <input type="number" id="number" placeholder="Votre Telephone" name="number" required />
+         
+          <button type="submit" class="btn" onclick="opForm()" >suivant</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
+
+          <button class="a" onclick="opeForm()"><strong>connection</strong></button>
+        </form>
+      </div>
+    </div>
+
+
+
+
+    <div class="login-popup">
+      <div class="form-popup" id="poForm">
+        <form action="/action_page.php" class="form-container">
+          <h2><em>Veuillez le saisir le code envoyer</em></h2>
+          <label for="password">
+            <strong>Mot de passe</strong>
+          </label>
+          <input type="password" id="password" placeholder="Votre Mot de passe" name="password" required />
+          <button type="submit" class="btn">connection</button>
+          <button class="a"   onclick="cloForm()" ><strong>precedent</strong></button>
+          <button type="button" class="btn cancel" onclick="cloForm()">Fermer</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="login-popup">
+      <div class="form-popup" id="popForm">
+        <form action="/action_page.php" class="form-container">
+          <h2><em>Veuillez-vous connecter</em></h2><br>
+            <strong>Mot de passe</strong>
+          </label>
+          <input type="password" id="password" placeholder="Votre Mot de passe" name="password" required />
+          <button type="submit" class="btn">connection</button>
+          <button type="button" class="btn cancel" onclick="closForm()">Fermer</button>
+         
+        </form>
+      </div>
+    </div>
+    
+    <script>
+      function openForm() {
+        document.getElementById("popupForm").style.display = "block";
+       
+      
+      }
+      function opeForm() {
+      document.getElementById("popForm").style.display = "block";
+      }
+
+      function opForm() {
+      document.getElementById("poForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("popupForm").style.display = "none";
+        
+      }
+
+
+      function cloForm() {
+        document.getElementById("poForm").style.display = "none";
+      }
+      function closForm() {
+        document.getElementById("popForm").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
+
